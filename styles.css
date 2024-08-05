@@ -16,10 +16,6 @@
   color: white;
 }
 
-.hidden {
-  display: none;
-}
-
 body {
   min-height: 100vh;
   background-color: var(--very-dark-blue);
@@ -30,6 +26,11 @@ main {
   background-color: hsla(213, 20%, 18%, 0.685);
   padding: 2rem;
   border-radius: 1.4rem;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .icon {
@@ -43,8 +44,9 @@ main {
   border-radius: 50%;
 }
 
-.title {
-  font-size: 2rem;
+.title,
+.answer-title {
+  font-size: 1.6rem;
   color: var(--white);
 }
 
@@ -78,6 +80,20 @@ main {
   ); /* Change to desired background color */
   text-decoration: none;
   color: var(--light-grey); /* Change to desired text color */
+  cursor: pointer;
+}
+.ratings li a:hover {
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
+}
+
+.rating.clicked {
+  background-color: white;
+  color: var(--very-dark-blue);
+}
+
+.rating.clicked:hover {
+  background-color: white;
 }
 
 .ratings-btn {
@@ -87,4 +103,78 @@ main {
   border-radius: 30px;
   color: var(--dark-blue);
   font-weight: 700;
+}
+
+.ratings-btn:hover {
+  background-color: var(--white);
+}
+
+.selected-rating {
+  color: var(--orange);
+}
+
+/* Answer Section */
+
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-img {
+  width: 40%;
+  padding-bottom: 1.2rem;
+}
+
+.selection {
+  padding: 0.5rem 1rem;
+  background-color: hsla(212, 24%, 22%, 0.507);
+  border-radius: 25px;
+  font-size: 0.8rem;
+  color: var(--orange);
+}
+
+.answer-description {
+  color: var(--light-grey);
+  text-align: center;
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Media Queries */
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 575px) {
+  main {
+    width: 90%;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  main {
+    width: 50%;
+  }
+}
+
+/* Medium Devices (Desktops) */
+@media (min-width: 768px) and (max-width: 991px) {
+  main {
+    width: 40%;
+  }
+}
+
+/* Large Devices (Large Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  main {
+    width: 30%;
+  }
+}
+
+/* Extra Large Devices (Extra Large Desktops) */
+@media (min-width: 1200px) {
 }
